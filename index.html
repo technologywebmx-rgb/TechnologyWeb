@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Technology Web | Diseño y Desarrollo Web Profesional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,.95);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+z-index:1000;
+border-bottom:1px solid #d4af37;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+height:70px;
+width:auto;
+border-radius:10px;
+}
+
+.logo h2{
+color:#d4af37;
+font-size:28px;
+font-weight:700;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8% 80px;
+background:
+linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600');
+background-size:cover;
+background-position:center;
+}
+
+.hero-text{
+width:55%;
+}
+
+.hero-text h1{
+font-size:70px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#d4af37;
+}
+
+.hero-text p{
+font-size:20px;
+color:#ddd;
+margin-bottom:30px;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:16px 35px;
+background:#d4af37;
+color:black;
+font-weight:700;
+text-decoration:none;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(212,175,55,.4);
+}
+
+.btn-secundario{
+margin-left:15px;
+background:transparent;
+border:2px solid #d4af37;
+color:#d4af37;
+}
+
+.btn-secundario:hover{
+background:#d4af37;
+color:black;
+}
+
+.hero-img{
+width:40%;
+display:flex;
+justify-content:center;
+}
+
+.hero-img img{
+width:320px;
+border-radius:20px;
+box-shadow:0 0 40px rgba(212,175,55,.3);
+}
+
+/* ===== SECCIONES ===== */
+
+section{
+padding:100px 8%;
+}
+
+.titulo{
+text-align:center;
+font-size:48px;
+color:#d4af37;
+margin-bottom:60px;
+}
+
+.subtitulo{
+text-align:center;
+max-width:900px;
+margin:auto;
+font-size:18px;
+color:#ccc;
+line-height:1.8;
+}
+
+/* ===== ESTADÍSTICAS ===== */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+.stat-box{
+background:#1a1a1a;
+padding:35px;
+border-radius:20px;
+text-align:center;
+border:1px solid #333;
+transition:.3s;
+}
+
+.stat-box:hover{
+border-color:#d4af37;
+transform:translateY(-8px);
+}
+
+.stat-box h3{
+font-size:40px;
+color:#d4af37;
+}
+
+.stat-box p{
+margin-top:10px;
+color:#ccc;
+}
+
+/* ===== SERVICIOS ===== */
+
+.servicios{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.card{
+background:#1a1a1a;
+padding:35px;
+border-radius:20px;
+border:1px solid #2a2a2a;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#d4af37;
+}
+
+.card h3{
+color:#d4af37;
+margin-bottom:15px;
+font-size:24px;
+}
+
+.card p{
+color:#ccc;
+line-height:1.8;
+}
+
+.card-icon{
+font-size:45px;
+margin-bottom:15px;
+}
+
+/* ===== PORTAFOLIO ===== */
+
+.portafolio{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.proyecto{
+background:#1a1a1a;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #333;
+transition:.3s;
+}
+
+.proyecto:hover{
+transform:translateY(-10px);
+border-color:#d4af37;
+}
+
+.proyecto img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.proyecto-info{
+padding:25px;
+}
+
+.proyecto-info h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text,
+.hero-img{
+width:100%;
+}
+
+.hero-text h1{
+font-size:45px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.jpeg" alt="Technology Web">
+<h2>Technology Web</h2>
+</div>
+
+<nav>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#servicios">Servicios</a></li>
+<li><a href="#portafolio">Portafolio</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero" id="inicio">
+
+<div class="hero-text">
+
+<h1>
+Impulsamos tu negocio con
+<span>páginas web profesionales</span>
+</h1>
+
+<p>
+Diseñamos y desarrollamos sitios web modernos, funcionales y visualmente atractivos para emprendedores y pequeñas empresas que desean fortalecer su presencia digital.
+</p>
+
+<a href="#contacto" class="btn">
+Solicitar Cotización
+</a>
+
+<a href="#servicios" class="btn btn-secundario">
+Nuestros Servicios
+</a>
+
+</div>
+
+<div class="hero-img">
+<img src="logo.jpeg" alt="Technology Web">
+</div>
+
+</section>
+<!-- NOSOTROS -->
+
+<section id="nosotros">
+
+<h2 class="titulo">
+¿Quiénes Somos?
+</h2>
+
+<p class="subtitulo">
+
+Technology Web es una empresa especializada en diseño y desarrollo de páginas web profesionales para emprendedores y pequeños negocios.
+
+Nuestra misión es brindar soluciones web innovadoras y accesibles que ayudan a emprendedores y pequeñas empresas a fortalecer su presencia digital, ofreciendo un servicio personalizado, eficiente y de alta calidad.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-box">
+<h3>50+</h3>
+<p>Proyectos Realizados</p>
+</div>
+
+<div class="stat-box">
+<h3>100%</h3>
+<p>Clientes Satisfechos</p>
+</div>
+
+<div class="stat-box">
+<h3>24/7</h3>
+<p>Soporte y Atención</p>
+</div>
+
+<div class="stat-box">
+<h3>5★</h3>
+<p>Calificación Promedio</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+
+<h2 class="titulo">
+Nuestros Servicios
+</h2>
+
+<p class="subtitulo">
+Ofrecemos soluciones digitales modernas para impulsar tu negocio y ayudarte a destacar en internet.
+</p>
+
+<div class="servicios">
+
+<div class="card">
+
+<div class="card-icon">
+💻
+</div>
+
+<h3>Diseño Web</h3>
+
+<p>
+Diseñamos páginas web atractivas, modernas y adaptables a celulares, tablets y computadoras.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+⚙️
+</div>
+
+<h3>Desarrollo Web</h3>
+
+<p>
+Programamos sitios web rápidos, seguros y optimizados para ofrecer la mejor experiencia al usuario.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+🛒
+</div>
+
+<h3>Tiendas Online</h3>
+
+<p>
+Creamos tiendas virtuales para vender productos y servicios de forma profesional.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+📈
+</div>
+
+<h3>Posicionamiento SEO</h3>
+
+<p>
+Mejoramos la visibilidad de tu negocio en Google para atraer más clientes potenciales.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+📱
+</div>
+
+<h3>Diseño Responsivo</h3>
+
+<p>
+Tu sitio web se verá perfectamente en cualquier dispositivo móvil o de escritorio.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="card-icon">
+🔧
+</div>
+
+<h3>Mantenimiento Web</h3>
+
+<p>
+Actualizamos y optimizamos tu página para que siempre funcione correctamente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTAFOLIO -->
+
+<section id="portafolio">
+
+<h2 class="titulo">
+Proyectos Realizados
+</h2>
+
+<p class="subtitulo">
+Estos son algunos ejemplos de sitios web que desarrollamos para distintos sectores.
+</p>
+
+<div class="portafolio">
+
+<div class="proyecto">
+
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200" alt="Restaurante">
+
+<div class="proyecto-info">
+
+<h3>Restaurante Gourmet</h3>
+
+<p>
+Sitio web moderno con menú digital, reservas y galería de fotografías.
+</p>
+
+</div>
+
+</div>
+
+<div class="proyecto">
+
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200" alt="Tienda Online">
+
+<div class="proyecto-info">
+
+<h3>Tienda Online</h3>
+
+<p>
+Desarrollo de comercio electrónico con catálogo de productos y carrito de compras.
+</p>
+
+</div>
+
+</div>
+
+<div class="proyecto">
+
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" alt="Consultoría">
+
+<div class="proyecto-info">
+
+<h3>Consultoría Empresarial</h3>
+
+<p>
+Página corporativa enfocada en generación de clientes potenciales.
+</p>
+
+</div>
+
+</div>
+
+<div class="proyecto">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Tecnología">
+
+<div class="proyecto-info">
+
+<h3>Empresa Tecnológica</h3>
+
+<p>
+Diseño premium con animaciones modernas y experiencia profesional.
+</p>
+
+</div>
+
+</div>
+
+<div class="proyecto">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200" alt="Educación">
+
+<div class="proyecto-info">
+
+<h3>Academia Virtual</h3>
+
+<p>
+Plataforma educativa para cursos en línea y capacitación empresarial.
+</p>
+
+</div>
+
+</div>
+
+<div class="proyecto">
+
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200" alt="Marketing">
+
+<div class="proyecto-info">
+
+<h3>Agencia de Marketing</h3>
+
+<p>
+Sitio enfocado en publicidad digital y captación de nuevos clientes.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- TESTIMONIOS -->
+
+<section id="testimonios">
+
+<h2 class="titulo">
+Lo que dicen nuestros clientes
+</h2>
+
+<div class="servicios">
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+"Technology Web creó una página moderna para mi negocio. Ahora recibo más clientes por internet."
+</p>
+<br>
+<strong>- Carlos Hernández</strong>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+"Excelente servicio, atención rápida y una página web profesional."
+</p>
+<br>
+<strong>- Ana Martínez</strong>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>
+"Mi tienda online quedó increíble. Recomiendo totalmente a Technology Web."
+</p>
+<br>
+<strong>- Miguel López</strong>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto">
+
+<h2 class="titulo">
+Contáctanos
+</h2>
+
+<p class="subtitulo">
+¿Tienes un proyecto en mente? Ponte en contacto con nosotros y llevemos tu negocio al siguiente nivel.
+</p>
+
+<br><br>
+
+<div style="max-width:700px; margin:auto;">
+
+<form action="mailto:technologyweb@gmail.com" method="post" enctype="text/plain">
+
+<input type="text" placeholder="Nombre Completo" required
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="email" placeholder="Correo Electrónico" required
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="tel" placeholder="Teléfono"
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<textarea placeholder="Cuéntanos sobre tu proyecto" rows="6" required
+style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;"></textarea>
+
+<button type="submit"
+style="background:#d4af37;color:black;padding:15px 35px;border:none;border-radius:40px;font-weight:bold;cursor:pointer;">
+Enviar Mensaje
+</button>
+
+</form>
+
+</div>
+
+<br><br>
+
+<div style="text-align:center;">
+
+<h3 style="color:#d4af37;">Información de Contacto</h3>
+
+<br>
+
+<p>📧 technologyweb@gmail.com</p>
+
+<br>
+
+<p>📱 WhatsApp: 56 2713 0996</p>
+
+</div>
+
+</section>
+
+<!-- BOTÓN WHATSAPP -->
+
+<a href="https://wa.me/525627130996"
+target="_blank"
+style="
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+z-index:9999;
+">
+💬
+</a>
+
+<!-- FOOTER -->
+
+<footer style="
+background:#000;
+padding:50px 8%;
+border-top:2px solid #d4af37;
+">
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+">
+
+<div>
+<h3 style="color:#d4af37;">Technology Web</h3>
+
+<br>
+
+<p>
+Diseño y desarrollo de páginas web profesionales para emprendedores y pequeñas empresas.
+</p>
+</div>
+
+<div>
+<h3 style="color:#d4af37;">Servicios</h3>
+
+<br>
+
+<p>Diseño Web</p>
+<p>Desarrollo Web</p>
+<p>Tiendas Online</p>
+<p>SEO</p>
+</div>
+
+<div>
+<h3 style="color:#d4af37;">Contacto</h3>
+
+<br>
+
+<p>📧 technologyweb@gmail.com</p>
+<p>📱 56 2713 0996</p>
+</div>
+
+</div>
+
+<hr style="margin:30px 0;border-color:#333;">
+
+<div style="text-align:center;">
+<p>
+© 2026 Technology Web | Todos los derechos reservados
+</p>
+</div>
+
+</footer>
+
+</body>
+</html>
